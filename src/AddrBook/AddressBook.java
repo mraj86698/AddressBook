@@ -6,9 +6,9 @@ import java.util.Scanner;
 public class AddressBook {
 
 	ArrayList<Contact> list = new ArrayList();
-
+	Scanner sc = new Scanner(System.in);
 	public void add() {
-		Scanner sc = new Scanner(System.in);
+
 		System.out.println(" Enter FirstName: ");
 		String firstName = sc.next();
 		System.out.println(" Enter LastName: ");
@@ -30,10 +30,26 @@ public class AddressBook {
 		list.add(contact);
 	}
 
+	public void editContact(){
+	     System.out.println("Enter first name and last name to edit your details");
+	     System.out.println("Enter first name");
+	     String firstName = sc.next();
+	     System.out.println("enter last name");
+	     String lastName = sc.next();
+	     for (Contact contact:list){
+	      if(contact.getFirstName().equals(firstName) && contact.getLastName().equals(lastName)){
+	         contact.editExistingContact();
+	      }
+	     }
+	    }
+
 	public static void main(String[] args) {
 		AddressBook addressBook = new AddressBook();
 		addressBook.add();
 		System.out.println(addressBook.list);
+
+		addressBook.editContact();
+	     System.out.println(addressBook.list);
 	}
 
 }
