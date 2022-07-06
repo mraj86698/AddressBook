@@ -1,12 +1,13 @@
 package AddrBook;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AddressBook {
 
-	public static void main(String[] args) {
-		System.out.println("Welcome to Address Book Program\n");
+	ArrayList<Contact> list = new ArrayList();
 
+	public void add() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println(" Enter FirstName: ");
 		String firstName = sc.next();
@@ -24,13 +25,15 @@ public class AddressBook {
 		String phoneNo = sc.next();
 		System.out.println("Enter EmailID: ");
 		String email = sc.next();
-		sc.close();
 
-		System.out.println("\n First Name :" + firstName + "\n Last Name :" + lastName + "\n Address :" + address
-				+ "\n City Name :" + city + "\n State Name :" + state + "\n Zip code :" + zipCode + "\n Phone number :"
-				+ phoneNo + "\n Email id :" + email);
-
+		Contact contact = new Contact(firstName, lastName, address, city, state, zipCode, phoneNo, email);
+		list.add(contact);
 	}
 
+	public static void main(String[] args) {
+		AddressBook addressBook = new AddressBook();
+		addressBook.add();
+		System.out.println(addressBook.list);
+	}
 
 }
