@@ -26,7 +26,7 @@ public class Contact {
 	}
 	@Override
     public String toString() {
-        return "Added New Contact: " +
+        return "Contact: " +
                 " \nFirstName = " + firstName +
                 " \nLastName = " + lastName +
                 " \nAddress = " + address +
@@ -35,6 +35,12 @@ public class Contact {
                 " \nZipCode = " + zipCode +
                 " \nPhoneNo = " + phoneNo +
                 " \nEmail = " + email ;
+	}
+
+	public void print() {
+		System.out.println("First Name: " + firstName + "\nLast Name: " + lastName + "\nAddress: " + address
+				+ "\nCity:" + city + "\nState: " + state + "\nZip: " + zipCode + "\nContact number:" + phoneNo
+				+ "\nEmail ID:" + email + "\n");
 	}
 
 	public String getFirstName() {
